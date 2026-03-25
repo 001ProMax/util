@@ -285,22 +285,7 @@ export class Storage {
 	 * @returns {Record<string, any>}
 	 */
 	static #loaddata = dataFile => {
-		if ($app === "Node.js") {
-			this.fs = this.fs ? this.fs : require("node:fs");
-			this.path = this.path ? this.path : require("node:path");
-			const curDirDataFilePath = this.path.resolve(dataFile);
-			const rootDirDataFilePath = this.path.resolve(process.cwd(), dataFile);
-			const isCurDirDataFile = this.fs.existsSync(curDirDataFilePath);
-			const isRootDirDataFile = !isCurDirDataFile && this.fs.existsSync(rootDirDataFilePath);
-			if (isCurDirDataFile || isRootDirDataFile) {
-				const datPath = isCurDirDataFile ? curDirDataFilePath : rootDirDataFilePath;
-				try {
-					return JSON.parse(this.fs.readFileSync(datPath));
-				} catch (e) {
-					return {};
-				}
-			} else return {};
-		} else return {};
+		return {};
 	};
 
 	/**
