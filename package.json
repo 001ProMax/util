@@ -1,5 +1,6 @@
 {
 	"name": "@nsnanocat/util",
+    "type": "module",
 	"description": "Pure JS's util module for well-known iOS network tools",
 	"author": "VirgilClyne <Virgil@nanocat.me>",
 	"homepage": "https://NSNanoCat.github.io/util",
